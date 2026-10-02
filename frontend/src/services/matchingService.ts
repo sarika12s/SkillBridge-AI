@@ -2,6 +2,8 @@ import { apiClient } from './api';
 import type {
   MatchAnalysisResponse,
   ResumeSkillGapsResponse,
+  SimulationRequest,
+  SimulationResponse,
 } from '../types/matching';
 
 export const analyzeResumeJobMatch = async (
@@ -37,6 +39,16 @@ export const getResumeSkillGaps = async (
 ): Promise<ResumeSkillGapsResponse> => {
   const response = await apiClient.get<ResumeSkillGapsResponse>(
     `/resumes/${resumeId}/skill-gaps`
+  );
+  return response.data;
+};
+
+export const simulateMatch = async (
+  request: SimulationRequest
+): Promise<SimulationResponse> => {
+  const response = await apiClient.post<SimulationResponse>(
+    '/matching/simulate',
+    request
   );
   return response.data;
 };

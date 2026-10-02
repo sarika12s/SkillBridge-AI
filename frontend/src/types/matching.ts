@@ -118,3 +118,67 @@ export interface ResumeSkillGapsResponse {
   required_gaps: SkillGap[];
   preferred_gaps: SkillGap[];
 }
+
+export interface SimulatedSkillDetail {
+  skill_id: string;
+  canonical_skill_name: string;
+  priority: RequirementPriority;
+  current_status: string;
+  gap_reason: string;
+  estimated_learning_hours?: number;
+  learning_resources_count: number;
+}
+
+export interface ProjectedGapState {
+  closed_gaps: string[];
+  remaining_required_gaps: string[];
+  remaining_preferred_gaps: string[];
+  total_initial_gaps: number;
+  total_remaining_gaps: number;
+}
+
+export interface CareerRoleProjection {
+  occupation_id: string;
+  occupation_title: string;
+  current_compatibility_score: number;
+  projected_compatibility_score: number;
+  compatibility_score_delta: number;
+}
+
+export interface SimulationResponse {
+  match_analysis_id: string;
+  job_id: string;
+  job_title: string;
+  resume_id: string;
+
+  current_ats_score: number;
+  projected_ats_score: number;
+  ats_score_delta: number;
+
+  current_compatibility_score: number;
+  projected_compatibility_score: number;
+  compatibility_score_delta: number;
+
+  current_required_coverage: number;
+  projected_required_coverage: number;
+  required_coverage_delta: number;
+
+  current_preferred_coverage: number;
+  projected_preferred_coverage: number;
+  preferred_coverage_delta: number;
+
+  simulated_skills: SimulatedSkillDetail[];
+  gap_state: ProjectedGapState;
+  projected_score_breakdowns: ScoreBreakdown[];
+
+  total_estimated_learning_hours?: number;
+  learning_hour_roi?: number;
+
+  explanation: string;
+  target_role_projection?: CareerRoleProjection;
+}
+
+export interface SimulationRequest {
+  match_analysis_id: string;
+  simulated_skill_ids: string[];
+}

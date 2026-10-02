@@ -11,8 +11,11 @@ from app.schemas.matching import (
     MatchRequestSchema,
     MatchAnalysisResponse,
     ResumeSkillGapsResponse,
+    SimulationRequest,
+    SimulationResponse,
 )
 from app.services.matching_service import matching_service
+from app.services.simulation_service import simulation_service
 
 router = APIRouter(tags=["Matching & Skill Gaps"])
 
@@ -97,4 +100,28 @@ def get_resume_skill_gaps(
         db=db,
         resume_id=resume_id,
         user_id=uuid.UUID(current_user_id),
+    )
+
+
+@router.post(
+    "/matching/simulate",
+    response_model=SimulationResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Execute interactive What-If gap-closure simulation",
+)
+def simulate_match(
+    request: SimulationRequest,
+    db: Session = Depends(get_db),
+    current_user_id: str = Depends(get_current_user_id),
+):
+    """
+    Simulates counterfactual acquisition of candidate skill gaps for a previously stored
+    match analysis. Recalculates ATS Readiness and Job Compatibility scores deterministically
+    via the Phase 5 ScoringEngine with zero database persistence.
+    """
+    return simulation_service.simulate_gap_closure(
+        db=db,
+        user_id=uuid.UUID(current_user_id),
+        match_analysis_id=request.match_analysis_id,
+        simulated_skill_ids=request.simulated_skill_ids,
     )

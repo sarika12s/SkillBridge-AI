@@ -8,6 +8,7 @@ import type { MatchAnalysisResponse } from '../types/matching';
 import { ScoreCards } from '../components/matching/ScoreCards';
 import { StructuredAlignmentCard } from '../components/matching/StructuredAlignmentCard';
 import { SkillComparisonTable } from '../components/matching/SkillComparisonTable';
+import { WhatIfSimulator } from '../components/matching/WhatIfSimulator';
 import { ExplainabilityBreakdown } from '../components/matching/ExplainabilityBreakdown';
 import {
   GitCompare,
@@ -204,6 +205,12 @@ export const MatchingDashboard: React.FC = () => {
 
           {/* Granular Skill Comparison Table with Filters */}
           <SkillComparisonTable matches={analysis.skill_matches} />
+
+          {/* Interactive What-If Gap-Closure Simulator (Phase 8.1) */}
+          <WhatIfSimulator
+            analysisId={analysis.id}
+            matches={analysis.skill_matches}
+          />
 
           {/* Dedicated Explainability Breakdown */}
           <ExplainabilityBreakdown

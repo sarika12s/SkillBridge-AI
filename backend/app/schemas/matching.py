@@ -116,3 +116,89 @@ class ResumeSkillGapsResponse(BaseModel):
     total_gaps: int
     required_gaps: List[SkillGapSchema] = Field(default_factory=list)
     preferred_gaps: List[SkillGapSchema] = Field(default_factory=list)
+
+
+class SimulationRequest(BaseModel):
+    match_analysis_id: uuid.UUID = Field(..., description="ID of the stored match analysis to simulate")
+    simulated_skill_ids: List[uuid.UUID] = Field(
+        ..., min_length=1, description="List of taxonomy skill IDs from current gaps to hypothetically acquire"
+    )
+
+
+class SimulatedSkillDetail(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    skill_id: uuid.UUID
+    canonical_skill_name: str
+    priority: str = Field("REQUIRED", description="REQUIRED or PREFERRED")
+    current_status: str = Field(
+        ...,
+        description="MISSING_REQUIRED, PARTIAL_REQUIRED, MISSING_PREFERRED, PARTIAL_PREFERRED, RELATED_SUPPORT",
+    )
+    gap_reason: str
+    estimated_learning_hours: Optional[float] = None
+    learning_resources_count: int = 0
+
+
+class ProjectedGapState(BaseModel):
+    closed_gaps: List[str] = Field(default_factory=list, description="Skill names of gaps that would be closed")
+    remaining_required_gaps: List[str] = Field(default_factory=list)
+    remaining_preferred_gaps: List[str] = Field(default_factory=list)
+    total_initial_gaps: int
+    total_remaining_gaps: int
+
+
+class CareerRoleProjection(BaseModel):
+    occupation_id: uuid.UUID
+    occupation_title: str
+    current_compatibility_score: float = Field(..., ge=0.0, le=100.0)
+    projected_compatibility_score: float = Field(..., ge=0.0, le=100.0)
+    compatibility_score_delta: float
+
+
+class SimulationResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    match_analysis_id: uuid.UUID
+    job_id: uuid.UUID
+    job_title: str
+    resume_id: uuid.UUID
+
+    # ATS Score
+    current_ats_score: float = Field(..., ge=0.0, le=100.0)
+    projected_ats_score: float = Field(..., ge=0.0, le=100.0)
+    ats_score_delta: float
+
+    # Job Compatibility Score
+    current_compatibility_score: float = Field(..., ge=0.0, le=100.0)
+    projected_compatibility_score: float = Field(..., ge=0.0, le=100.0)
+    compatibility_score_delta: float
+
+    # Required Skill Coverage
+    current_required_coverage: float = Field(..., ge=0.0, le=100.0)
+    projected_required_coverage: float = Field(..., ge=0.0, le=100.0)
+    required_coverage_delta: float
+
+    # Preferred Skill Coverage
+    current_preferred_coverage: float = Field(..., ge=0.0, le=100.0)
+    projected_preferred_coverage: float = Field(..., ge=0.0, le=100.0)
+    preferred_coverage_delta: float
+
+    # Simulated Skills
+    simulated_skills: List[SimulatedSkillDetail] = Field(default_factory=list)
+
+    # Gap State
+    gap_state: ProjectedGapState
+
+    # Score Breakdowns (projected)
+    projected_score_breakdowns: List[ScoreBreakdownSchema] = Field(default_factory=list)
+
+    # Learning-Hour ROI
+    total_estimated_learning_hours: Optional[float] = None
+    learning_hour_roi: Optional[float] = None
+
+    # Explanation Narrative
+    explanation: str
+
+    # Optional Target Role Projection
+    target_role_projection: Optional[CareerRoleProjection] = None
