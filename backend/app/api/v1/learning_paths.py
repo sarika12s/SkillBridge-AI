@@ -1,7 +1,7 @@
 """API Router for Personalized Learning Paths and Modular Progress Tracking."""
 
 import uuid
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
 
@@ -11,6 +11,8 @@ from app.schemas.learning import (
     LearningPathCreateRequest,
     LearningPathResponseSchema,
     ItemProgressUpdateRequest,
+    ReconciliationRequest,
+    ReconciliationResponse,
 )
 from app.services.learning_service import LearningService
 
@@ -96,4 +98,30 @@ def update_item_progress(
         user_id=uuid.UUID(current_user_id),
         new_status=request.status,
         notes=request.notes,
+    )
+
+
+@router.post(
+    "/{path_id}/reconcile",
+    response_model=ReconciliationResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Reconcile roadmap milestones against newer resume versions",
+)
+def reconcile_learning_path(
+    path_id: uuid.UUID,
+    request: Optional[ReconciliationRequest] = None,
+    db: Session = Depends(get_db),
+    current_user_id: str = Depends(get_current_user_id),
+):
+    """
+    Reconciles an active personalized learning path against a newer resume version.
+    Automatically marks corresponding milestones as COMPLETED with authoritative provenance
+    (RESUME_EVIDENCE), recalculates progress percentages and remaining hours.
+    Idempotent and non-destructive: completed items are never demoted.
+    """
+    service = LearningService(db)
+    return service.reconcile_learning_path(
+        path_id=path_id,
+        user_id=uuid.UUID(current_user_id),
+        req=request,
     )

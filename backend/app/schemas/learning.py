@@ -38,6 +38,10 @@ class LearningPathItemSchema(BaseModel):
     completed_at: Optional[datetime] = None
     notes: Optional[str] = None
     prerequisites_summary: Optional[str] = None
+    verified_by_resume_id: Optional[uuid.UUID] = None
+    verified_by_resume_version: Optional[int] = None
+    verified_at: Optional[datetime] = None
+    verification_method: Optional[str] = None
     resource: Optional[LearningResourceSchema] = None
 
 
@@ -100,3 +104,39 @@ class LearningPathResponseSchema(BaseModel):
     graph: Optional[LearningPathGraphSchema] = None
     created_at: datetime
     updated_at: datetime
+
+
+class ReconciliationRequest(BaseModel):
+    resume_id: Optional[uuid.UUID] = Field(
+        None,
+        description="Target resume ID to reconcile against. If omitted, uses the candidate's latest resume version.",
+    )
+
+
+class VerifiedItemDetail(BaseModel):
+    item_id: uuid.UUID
+    skill_id: uuid.UUID
+    skill_name: str
+    stage_order: int
+    match_method: str
+    confidence: float
+    evidence_sentence: str
+    verified_at: datetime
+
+
+class ReconciliationResponse(BaseModel):
+    learning_path_id: uuid.UUID
+    baseline_resume_id: uuid.UUID
+    verifying_resume_id: uuid.UUID
+    verifying_resume_version: int
+    items_evaluated: int
+    newly_verified_count: int
+    already_completed_count: int
+    remaining_unverified_count: int
+    previous_progress_percentage: float
+    new_progress_percentage: float
+    previous_remaining_hours: float
+    new_remaining_hours: float
+    path_status: str
+    verified_items: List[VerifiedItemDetail] = Field(default_factory=list)
+    message: str

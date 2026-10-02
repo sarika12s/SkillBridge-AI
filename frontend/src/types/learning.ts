@@ -26,6 +26,10 @@ export interface LearningPathItem {
   completed_at?: string;
   notes?: string;
   prerequisites_summary?: string;
+  verified_by_resume_id?: string;
+  verified_by_resume_version?: number;
+  verified_at?: string;
+  verification_method?: string;
   resource?: LearningResource;
 }
 
@@ -86,4 +90,37 @@ export interface LearningPathCreateRequest {
 export interface ItemProgressUpdateRequest {
   status: 'NOT_STARTED' | 'IN_PROGRESS' | 'COMPLETED';
   notes?: string;
+}
+
+export interface ReconciliationRequest {
+  resume_id?: string;
+}
+
+export interface VerifiedItemDetail {
+  item_id: string;
+  skill_id: string;
+  skill_name: string;
+  stage_order: number;
+  match_method: string;
+  confidence: number;
+  evidence_sentence: string;
+  verified_at: string;
+}
+
+export interface ReconciliationResponse {
+  learning_path_id: string;
+  baseline_resume_id: string;
+  verifying_resume_id: string;
+  verifying_resume_version: number;
+  items_evaluated: number;
+  newly_verified_count: number;
+  already_completed_count: number;
+  remaining_unverified_count: number;
+  previous_progress_percentage: number;
+  new_progress_percentage: number;
+  previous_remaining_hours: number;
+  new_remaining_hours: number;
+  path_status: string;
+  verified_items: VerifiedItemDetail[];
+  message: string;
 }

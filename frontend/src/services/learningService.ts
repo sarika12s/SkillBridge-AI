@@ -1,5 +1,10 @@
 import { apiClient } from './api';
-import type { LearningPath, LearningPathCreateRequest } from '../types/learning';
+import type {
+  LearningPath,
+  LearningPathCreateRequest,
+  ReconciliationRequest,
+  ReconciliationResponse,
+} from '../types/learning';
 
 export const learningService = {
   async createLearningPath(request: LearningPathCreateRequest): Promise<LearningPath> {
@@ -26,6 +31,17 @@ export const learningService = {
       status,
       notes,
     });
+    return response.data;
+  },
+
+  async reconcileLearningPath(
+    pathId: string,
+    request?: ReconciliationRequest
+  ): Promise<ReconciliationResponse> {
+    const response = await apiClient.post<ReconciliationResponse>(
+      `/learning-paths/${pathId}/reconcile`,
+      request || {}
+    );
     return response.data;
   },
 };

@@ -123,6 +123,13 @@ class LearningPathItem(Base):
     completed_at: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True), nullable=True)
     notes: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
     prerequisites_summary: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    verified_by_resume_id: Mapped[Optional[uuid.UUID]] = mapped_column(
+        UUID(as_uuid=True), ForeignKey("resumes.id", ondelete="SET NULL"), nullable=True, index=True
+    )
+    verified_at: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True), nullable=True)
+    verification_method: Mapped[Optional[str]] = mapped_column(
+        String(50), nullable=True
+    )  # 'RESUME_EVIDENCE', 'MANUAL'
 
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), nullable=False
@@ -131,3 +138,4 @@ class LearningPathItem(Base):
     learning_path: Mapped["LearningPath"] = relationship("LearningPath", back_populates="items")
     skill = relationship("Skill")
     resource: Mapped[Optional["LearningResource"]] = relationship("LearningResource", back_populates="path_items")
+    verified_by_resume = relationship("Resume", foreign_keys=[verified_by_resume_id])

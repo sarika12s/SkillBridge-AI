@@ -22,9 +22,20 @@ export const LearningStageCard: React.FC<LearningStageCardProps> = ({
   onUpdateItemStatus,
   updatingItemId,
 }) => {
-  const getStatusBadge = (status: LearningPathItem['status']) => {
-    switch (status) {
+  const getStatusBadge = (item: LearningPathItem) => {
+    switch (item.status) {
       case 'COMPLETED':
+        if (item.verification_method === 'RESUME_EVIDENCE') {
+          return (
+            <span
+              title={item.notes || 'Verified by resume evidence'}
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 cursor-help"
+            >
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+              Verified by Resume{item.verified_by_resume_version ? ` v${item.verified_by_resume_version}` : ''}
+            </span>
+          );
+        }
         return (
           <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
             <CheckCircle2 className="w-3.5 h-3.5" />
@@ -105,8 +116,16 @@ export const LearningStageCard: React.FC<LearningStageCardProps> = ({
                     </span>
                     <h4 className="text-base font-bold text-slate-100">{item.skill_name}</h4>
                   </div>
-                  <div>{getStatusBadge(item.status)}</div>
+                  <div>{getStatusBadge(item)}</div>
                 </div>
+
+                {/* Resume Evidence Verification Callout */}
+                {item.verification_method === 'RESUME_EVIDENCE' && item.notes && (
+                  <div className="text-xs text-emerald-300 bg-emerald-950/40 p-2.5 rounded-lg border border-emerald-800/50 mb-3 flex items-start gap-2 shadow-sm">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <span className="leading-relaxed">{item.notes}</span>
+                  </div>
+                )}
 
                 {/* Prerequisites Explanation */}
                 {item.prerequisites_summary && (
