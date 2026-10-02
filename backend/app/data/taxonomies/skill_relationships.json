@@ -1,0 +1,322 @@
+[
+  {
+    "source_skill": "Python",
+    "target_skill": "FastAPI",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.95,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Python",
+    "target_skill": "Django",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.95,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Python",
+    "target_skill": "Machine Learning",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.90,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Python",
+    "target_skill": "Pandas",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.95,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Python",
+    "target_skill": "NumPy",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.95,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Python",
+    "target_skill": "PyTorch",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.90,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Python",
+    "target_skill": "TensorFlow",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.90,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "JavaScript",
+    "target_skill": "TypeScript",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.90,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "JavaScript",
+    "target_skill": "React",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.95,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "React",
+    "target_skill": "React Native",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.90,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "HTML",
+    "target_skill": "React",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.85,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "CSS",
+    "target_skill": "Tailwind CSS",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.90,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Java",
+    "target_skill": "Spring Boot",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.95,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "C",
+    "target_skill": "C++",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.80,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "SQL",
+    "target_skill": "PostgreSQL",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.95,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "SQL",
+    "target_skill": "MySQL",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.95,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Docker",
+    "target_skill": "Kubernetes",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.85,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Machine Learning",
+    "target_skill": "Deep Learning",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.90,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Machine Learning",
+    "target_skill": "Natural Language Processing",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.85,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Machine Learning",
+    "target_skill": "Computer Vision",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.85,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "NumPy",
+    "target_skill": "Pandas",
+    "relationship_type": "PREREQUISITE_OF",
+    "strength_weight": 0.80,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Deep Learning",
+    "target_skill": "Machine Learning",
+    "relationship_type": "SUBSKILL_OF",
+    "strength_weight": 0.95,
+    "confidence": 1.0,
+    "source": "ESCO_HIERARCHY"
+  },
+  {
+    "source_skill": "Natural Language Processing",
+    "target_skill": "Machine Learning",
+    "relationship_type": "SUBSKILL_OF",
+    "strength_weight": 0.90,
+    "confidence": 1.0,
+    "source": "ESCO_HIERARCHY"
+  },
+  {
+    "source_skill": "Computer Vision",
+    "target_skill": "Machine Learning",
+    "relationship_type": "SUBSKILL_OF",
+    "strength_weight": 0.90,
+    "confidence": 1.0,
+    "source": "ESCO_HIERARCHY"
+  },
+  {
+    "source_skill": "React Native",
+    "target_skill": "React",
+    "relationship_type": "SUBSKILL_OF",
+    "strength_weight": 0.85,
+    "confidence": 1.0,
+    "source": "ONET_RELATIONS"
+  },
+  {
+    "source_skill": "Docker",
+    "target_skill": "CI/CD",
+    "relationship_type": "RELATED_TO",
+    "strength_weight": 0.80,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Kubernetes",
+    "target_skill": "Docker",
+    "relationship_type": "RELATED_TO",
+    "strength_weight": 0.90,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "PostgreSQL",
+    "target_skill": "MySQL",
+    "relationship_type": "RELATED_TO",
+    "strength_weight": 0.75,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "MongoDB",
+    "target_skill": "Redis",
+    "relationship_type": "RELATED_TO",
+    "strength_weight": 0.70,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "PyTorch",
+    "target_skill": "TensorFlow",
+    "relationship_type": "RELATED_TO",
+    "strength_weight": 0.85,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Scikit-learn",
+    "target_skill": "Machine Learning",
+    "relationship_type": "RELATED_TO",
+    "strength_weight": 0.90,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Amazon Web Services",
+    "target_skill": "Microsoft Azure",
+    "relationship_type": "RELATED_TO",
+    "strength_weight": 0.85,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Amazon Web Services",
+    "target_skill": "Google Cloud Platform",
+    "relationship_type": "RELATED_TO",
+    "strength_weight": 0.85,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "REST API",
+    "target_skill": "GraphQL",
+    "relationship_type": "RELATED_TO",
+    "strength_weight": 0.80,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "FastAPI",
+    "target_skill": "REST API",
+    "relationship_type": "RELATED_TO",
+    "strength_weight": 0.90,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Git",
+    "target_skill": "CI/CD",
+    "relationship_type": "RELATED_TO",
+    "strength_weight": 0.80,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Linux",
+    "target_skill": "Docker",
+    "relationship_type": "RELATED_TO",
+    "strength_weight": 0.80,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "TypeScript",
+    "target_skill": "React",
+    "relationship_type": "USED_WITH",
+    "strength_weight": 0.90,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "Tailwind CSS",
+    "target_skill": "React",
+    "relationship_type": "USED_WITH",
+    "strength_weight": 0.85,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  },
+  {
+    "source_skill": "FastAPI",
+    "target_skill": "PostgreSQL",
+    "relationship_type": "USED_WITH",
+    "strength_weight": 0.80,
+    "confidence": 1.0,
+    "source": "CURATED_KNOWLEDGE_GRAPH"
+  }
+]

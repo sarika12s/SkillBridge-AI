@@ -1,0 +1,162 @@
+[
+  {
+    "name": "Python",
+    "category": "PROGRAMMING_LANGUAGE",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/c4e8b835-90d2-43fa-a006-25f0bbd260db",
+    "description": "Python is an interpreted, high-level, general-purpose programming language supporting multiple paradigms including procedural, object-oriented, and functional programming.",
+    "alternative_labels": ["Python 3", "Python programming", "Python language", "py"]
+  },
+  {
+    "name": "JavaScript",
+    "category": "PROGRAMMING_LANGUAGE",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/a2b53b82-7ea9-42b7-8ceb-ecdfd7b7fa08",
+    "description": "JavaScript is a high-level, interpreted scripting language conforming to the ECMAScript specification used for client-side and server-side web development.",
+    "alternative_labels": ["JS", "Javascript", "ECMAScript", "ES6", "Vanilla JS"]
+  },
+  {
+    "name": "TypeScript",
+    "category": "PROGRAMMING_LANGUAGE",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/f61c3127-1428-48b4-934d-176395b16954",
+    "description": "TypeScript is a strongly typed, object-oriented, compiled programming language designed by Microsoft that acts as a strict syntactical superset of JavaScript.",
+    "alternative_labels": ["TS", "Typescript language"]
+  },
+  {
+    "name": "Java",
+    "category": "PROGRAMMING_LANGUAGE",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/e32230ef-90d2-421b-8515-38b45946399c",
+    "description": "Java is a class-based, object-oriented programming language designed for portability across platforms via the Java Virtual Machine (JVM). Distinct from JavaScript.",
+    "alternative_labels": ["Java SE", "Java EE", "Core Java", "Java 17", "Java 21"]
+  },
+  {
+    "name": "C++",
+    "category": "PROGRAMMING_LANGUAGE",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/7cf555b7-789a-4c28-98e5-35071191ea44",
+    "description": "C++ is a high-performance general-purpose programming language created as an extension of the C programming language with object-oriented and generic capabilities. Distinct from C.",
+    "alternative_labels": ["CPP", "C plus plus", "C/C++"]
+  },
+  {
+    "name": "C",
+    "category": "PROGRAMMING_LANGUAGE",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/2a2e46b1-4b13-4318-8f85-3b95769eb077",
+    "description": "C is a procedural computer programming language supporting structured programming, lexical variable scope, and recursion with a static type system. Distinct from C++.",
+    "alternative_labels": ["C language", "ANSI C"]
+  },
+  {
+    "name": "SQL",
+    "category": "DATABASE",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/9db1bc5a-e070-4961-841c-8e4cb310a01a",
+    "description": "Structured Query Language (SQL) is a domain-specific language used for managing data held in relational database management systems.",
+    "alternative_labels": ["Structured Query Language", "ANSI SQL", "Standard SQL"]
+  },
+  {
+    "name": "PostgreSQL",
+    "category": "DATABASE",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/6ff6a6e2-2e55-46eb-a9c6-2c5e527f5255",
+    "description": "PostgreSQL is a powerful, open-source object-relational database system known for reliability, feature robustness, and performance.",
+    "alternative_labels": ["Postgres", "Postgres SQL", "PostgreSQL database", "psql"]
+  },
+  {
+    "name": "MySQL",
+    "category": "DATABASE",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/96431969-52e4-4d8b-bdc3-0447fa44bce0",
+    "description": "MySQL is an open-source relational database management system. Distinct from PostgreSQL and generic SQL.",
+    "alternative_labels": ["My SQL", "MySQL server"]
+  },
+  {
+    "name": "MongoDB",
+    "category": "DATABASE",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/46123490-50d4-4bb1-8e99-88334411aa22",
+    "description": "MongoDB is a source-available, cross-platform, document-oriented NoSQL database program that uses JSON-like documents with optional schemas.",
+    "alternative_labels": ["Mongo", "Mongo DB", "NoSQL MongoDB"]
+  },
+  {
+    "name": "Redis",
+    "category": "DATABASE",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/78119022-3344-42aa-99bb-112233445566",
+    "description": "Redis is an in-memory data structure store used as a distributed, in-memory key-value database, cache, and message broker.",
+    "alternative_labels": ["Redis cache", "Remote Dictionary Server"]
+  },
+  {
+    "name": "Docker",
+    "category": "CLOUD_DEVOPS",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/22334455-6677-8899-0011-223344556677",
+    "description": "Docker is a set of platform-as-a-service products that use OS-level virtualization to deliver software in packages called containers.",
+    "alternative_labels": ["Docker containers", "Docker containerization", "Docker Engine"]
+  },
+  {
+    "name": "Kubernetes",
+    "category": "CLOUD_DEVOPS",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/33445566-7788-9900-1122-334455667788",
+    "description": "Kubernetes is an open-source container orchestration system for automating software deployment, scaling, and management.",
+    "alternative_labels": ["K8s", "k8s", "Kube"]
+  },
+  {
+    "name": "Git",
+    "category": "TOOL_PLATFORM",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/11223344-5566-7788-9900-aabbccddeeff",
+    "description": "Git is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmers.",
+    "alternative_labels": ["Git VCS", "Git version control", "GitHub", "GitLab"]
+  },
+  {
+    "name": "Linux",
+    "category": "TOOL_PLATFORM",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/55667788-9900-1122-3344-556677889900",
+    "description": "Linux is a family of open-source Unix-like operating systems based on the Linux kernel.",
+    "alternative_labels": ["GNU/Linux", "Linux OS", "Ubuntu", "CentOS", "Debian", "Bash shell"]
+  },
+  {
+    "name": "Machine Learning",
+    "category": "AI_ML",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/44556677-8899-0011-2233-445566778899",
+    "description": "Machine Learning is an umbrella of algorithms and statistical models that computer systems use to perform specific tasks without relying on explicit instructions.",
+    "alternative_labels": ["ML", "Machine learning algorithms", "Statistical learning"]
+  },
+  {
+    "name": "Deep Learning",
+    "category": "AI_ML",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/66778899-0011-2233-4455-667788990011",
+    "description": "Deep learning is part of a broader family of machine learning methods based on artificial neural networks with representation learning.",
+    "alternative_labels": ["DL", "Neural Networks", "Deep neural networks", "ANN"]
+  },
+  {
+    "name": "Natural Language Processing",
+    "category": "AI_ML",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/77889900-1122-3344-5566-778899001122",
+    "description": "Natural language processing is an interdisciplinary subfield of computer science and linguistics concerned with the interactions between computers and human language.",
+    "alternative_labels": ["NLP", "Computational linguistics", "Text processing"]
+  },
+  {
+    "name": "Computer Vision",
+    "category": "AI_ML",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/88990011-2233-4455-6677-889900112233",
+    "description": "Computer vision is an interdisciplinary scientific field that deals with how computers can gain high-level understanding from digital images or videos.",
+    "alternative_labels": ["CV", "Image processing", "Visual computing"]
+  },
+  {
+    "name": "REST API",
+    "category": "METHODOLOGY",
+    "taxonomy_source": "ESCO",
+    "taxonomy_code": "http://data.europa.eu/esco/skill/99001122-3344-5566-7788-990011223344",
+    "description": "Representational State Transfer (REST) is a software architectural style that defines a set of constraints to be used for creating Web services.",
+    "alternative_labels": ["RESTful API", "REST web services", "RESTful services", "REST"]
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "code": "ESCO-2512.1.1",
+    "title": "Backend Developer",
+    "description": "Responsible for server-side web application logic, RESTful API architecture, database integrations, authentication, and core system performance.",
+    "category": "SOFTWARE_DEVELOPMENT",
+    "source": "ESCO",
+    "source_version": "v1.2",
+    "skills": [
+      {"skill_name": "Python", "requirement_type": "REQUIRED", "importance_weight": 1.0},
+      {"skill_name": "FastAPI", "requirement_type": "REQUIRED", "importance_weight": 0.95},
+      {"skill_name": "PostgreSQL", "requirement_type": "REQUIRED", "importance_weight": 0.95},
+      {"skill_name": "REST API", "requirement_type": "REQUIRED", "importance_weight": 0.9},
+      {"skill_name": "Git", "requirement_type": "REQUIRED", "importance_weight": 0.85},
+      {"skill_name": "Docker", "requirement_type": "REQUIRED", "importance_weight": 0.85},
+      {"skill_name": "Redis", "requirement_type": "PREFERRED", "importance_weight": 0.75},
+      {"skill_name": "Kubernetes", "requirement_type": "PREFERRED", "importance_weight": 0.65},
+      {"skill_name": "Amazon Web Services", "requirement_type": "PREFERRED", "importance_weight": 0.7}
+    ]
+  },
+  {
+    "code": "ESCO-2512.1.2",
+    "title": "Frontend Developer",
+    "description": "Designs and builds responsive, interactive client-facing web applications using modern component-driven libraries, state management, and semantic styling.",
+    "category": "SOFTWARE_DEVELOPMENT",
+    "source": "ESCO",
+    "source_version": "v1.2",
+    "skills": [
+      {"skill_name": "JavaScript", "requirement_type": "REQUIRED", "importance_weight": 1.0},
+      {"skill_name": "TypeScript", "requirement_type": "REQUIRED", "importance_weight": 0.95},
+      {"skill_name": "React", "requirement_type": "REQUIRED", "importance_weight": 0.95},
+      {"skill_name": "HTML", "requirement_type": "REQUIRED", "importance_weight": 0.9},
+      {"skill_name": "CSS", "requirement_type": "REQUIRED", "importance_weight": 0.9},
+      {"skill_name": "Tailwind CSS", "requirement_type": "REQUIRED", "importance_weight": 0.85},
+      {"skill_name": "Git", "requirement_type": "REQUIRED", "importance_weight": 0.8},
+      {"skill_name": "REST API", "requirement_type": "PREFERRED", "importance_weight": 0.75}
+    ]
+  },
+  {
+    "code": "ESCO-2512.1.3",
+    "title": "Full Stack Developer",
+    "description": "Engineers end-to-end web applications bridging front-end user experience, robust backend services, relational persistence, and containerized deployment pipelines.",
+    "category": "SOFTWARE_DEVELOPMENT",
+    "source": "ESCO",
+    "source_version": "v1.2",
+    "skills": [
+      {"skill_name": "Python", "requirement_type": "REQUIRED", "importance_weight": 0.95},
+      {"skill_name": "FastAPI", "requirement_type": "REQUIRED", "importance_weight": 0.9},
+      {"skill_name": "JavaScript", "requirement_type": "REQUIRED", "importance_weight": 0.95},
+      {"skill_name": "TypeScript", "requirement_type": "REQUIRED", "importance_weight": 0.9},
+      {"skill_name": "React", "requirement_type": "REQUIRED", "importance_weight": 0.95},
+      {"skill_name": "PostgreSQL", "requirement_type": "REQUIRED", "importance_weight": 0.9},
+      {"skill_name": "Git", "requirement_type": "REQUIRED", "importance_weight": 0.85},
+      {"skill_name": "REST API", "requirement_type": "REQUIRED", "importance_weight": 0.9},
+      {"skill_name": "Docker", "requirement_type": "PREFERRED", "importance_weight": 0.8},
+      {"skill_name": "Tailwind CSS", "requirement_type": "PREFERRED", "importance_weight": 0.75},
+      {"skill_name": "Redis", "requirement_type": "PREFERRED", "importance_weight": 0.7}
+    ]
+  },
+  {
+    "code": "ESCO-2512.1.4",
+    "title": "Machine Learning Engineer",
+    "description": "Architects, trains, evaluates, and deploys predictive machine learning and deep learning models into production systems and high-throughput pipelines.",
+    "category": "ARTIFICIAL_INTELLIGENCE",
+    "source": "ESCO",
+    "source_version": "v1.2",
+    "skills": [
+      {"skill_name": "Python", "requirement_type": "REQUIRED", "importance_weight": 1.0},
+      {"skill_name": "Machine Learning", "requirement_type": "REQUIRED", "importance_weight": 1.0},
+      {"skill_name": "PyTorch", "requirement_type": "REQUIRED", "importance_weight": 0.95},
+      {"skill_name": "Scikit-learn", "requirement_type": "REQUIRED", "importance_weight": 0.95},
+      {"skill_name": "Pandas", "requirement_type": "REQUIRED", "importance_weight": 0.9},
+      {"skill_name": "NumPy", "requirement_type": "REQUIRED", "importance_weight": 0.9},
+      {"skill_name": "Git", "requirement_type": "REQUIRED", "importance_weight": 0.8},
+      {"skill_name": "TensorFlow", "requirement_type": "PREFERRED", "importance_weight": 0.8},
+      {"skill_name": "Docker", "requirement_type": "PREFERRED", "importance_weight": 0.75}
+    ]
+  },
+  {
+    "code": "ESCO-2512.1.5",
+    "title": "DevOps / Cloud Engineer",
+    "description": "Builds and maintains reliable cloud infrastructure, automated CI/CD pipelines, container orchestration, monitoring, and infrastructure-as-code environments.",
+    "category": "CLOUD_DEVOPS",
+    "source": "ESCO",
+    "source_version": "v1.2",
+    "skills": [
+      {"skill_name": "Linux", "requirement_type": "REQUIRED", "importance_weight": 1.0},
+      {"skill_name": "Docker", "requirement_type": "REQUIRED", "importance_weight": 1.0},
+      {"skill_name": "Kubernetes", "requirement_type": "REQUIRED", "importance_weight": 0.95},
+      {"skill_name": "Git", "requirement_type": "REQUIRED", "importance_weight": 0.9},
+      {"skill_name": "Amazon Web Services", "requirement_type": "REQUIRED", "importance_weight": 0.9},
+      {"skill_name": "Python", "requirement_type": "PREFERRED", "importance_weight": 0.75},
+      {"skill_name": "PostgreSQL", "requirement_type": "PREFERRED", "importance_weight": 0.7}
+    ]
+  },
+  {
+    "code": "ESCO-2512.1.6",
+    "title": "Data Scientist",
+    "description": "Applies statistical modeling, exploratory data analysis, machine learning algorithms, and data visualization to uncover patterns and support decision-making.",
+    "category": "DATA_SCIENCE",
+    "source": "ESCO",
+    "source_version": "v1.2",
+    "skills": [
+      {"skill_name": "Python", "requirement_type": "REQUIRED", "importance_weight": 1.0},
+      {"skill_name": "SQL", "requirement_type": "REQUIRED", "importance_weight": 0.95},
+      {"skill_name": "Pandas", "requirement_type": "REQUIRED", "importance_weight": 0.95},
+      {"skill_name": "NumPy", "requirement_type": "REQUIRED", "importance_weight": 0.95},
+      {"skill_name": "Machine Learning", "requirement_type": "REQUIRED", "importance_weight": 0.95},
+      {"skill_name": "Scikit-learn", "requirement_type": "PREFERRED", "importance_weight": 0.85},
+      {"skill_name": "PyTorch", "requirement_type": "PREFERRED", "importance_weight": 0.8},
+      {"skill_name": "Git", "requirement_type": "PREFERRED", "importance_weight": 0.75}
+    ]
+  }
+]

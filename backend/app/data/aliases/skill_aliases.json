@@ -1,0 +1,123 @@
+[
+  {"canonical_skill": "JavaScript", "alias": "JS", "alias_type": "ACRONYM", "source": "CURATED_TECH_DICT", "confidence": 1.0, "notes": "Common acronym"},
+  {"canonical_skill": "JavaScript", "alias": "Javascript", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Lowercase capitalization"},
+  {"canonical_skill": "JavaScript", "alias": "ECMAScript", "alias_type": "SYNONYM", "source": "ESCO_ALT_LABEL", "confidence": 0.95, "notes": "Formal language specification"},
+  {"canonical_skill": "JavaScript", "alias": "ES6", "alias_type": "SYNONYM", "source": "CURATED_TECH_DICT", "confidence": 0.95, "notes": "Modern JS standard"},
+  {"canonical_skill": "JavaScript", "alias": "Vanilla JS", "alias_type": "SYNONYM", "source": "CURATED_TECH_DICT", "confidence": 0.95, "notes": "Standard JS without frameworks"},
+
+  {"canonical_skill": "TypeScript", "alias": "TS", "alias_type": "ACRONYM", "source": "CURATED_TECH_DICT", "confidence": 1.0, "notes": "Common acronym"},
+  {"canonical_skill": "TypeScript", "alias": "Typescript", "alias_type": "SPELLING_VARIANT", "source": "CURATED_TECH_DICT", "confidence": 1.0, "notes": "Casing variant"},
+
+  {"canonical_skill": "Python", "alias": "py", "alias_type": "ACRONYM", "source": "CURATED_TECH_DICT", "confidence": 0.95, "notes": "File extension / shorthand"},
+  {"canonical_skill": "Python", "alias": "Python 3", "alias_type": "SYNONYM", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Major release"},
+  {"canonical_skill": "Python", "alias": "Python3", "alias_type": "SPELLING_VARIANT", "source": "CURATED_TECH_DICT", "confidence": 1.0, "notes": "Shorthand CLI command"},
+
+  {"canonical_skill": "PostgreSQL", "alias": "Postgres", "alias_type": "SYNONYM", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Universal nickname"},
+  {"canonical_skill": "PostgreSQL", "alias": "Postgres SQL", "alias_type": "SPELLING_VARIANT", "source": "CURATED_TECH_DICT", "confidence": 1.0, "notes": "Common phrase variant"},
+  {"canonical_skill": "PostgreSQL", "alias": "psql", "alias_type": "SYNONYM", "source": "CURATED_TECH_DICT", "confidence": 0.95, "notes": "CLI tool"},
+
+  {"canonical_skill": "MySQL", "alias": "mysql", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Lowercase variant"},
+  {"canonical_skill": "MySQL", "alias": "My SQL", "alias_type": "SPELLING_VARIANT", "source": "CURATED_TECH_DICT", "confidence": 0.95, "notes": "Spaced variant"},
+
+  {"canonical_skill": "SQL", "alias": "Structured Query Language", "alias_type": "SYNONYM", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Spelled out acronym"},
+  {"canonical_skill": "SQL", "alias": "ANSI SQL", "alias_type": "SYNONYM", "source": "CURATED_TECH_DICT", "confidence": 0.95, "notes": "Standard variant"},
+
+  {"canonical_skill": "MongoDB", "alias": "Mongo", "alias_type": "SYNONYM", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Common short name"},
+  {"canonical_skill": "MongoDB", "alias": "mongodb", "alias_type": "SPELLING_VARIANT", "source": "CURATED_TECH_DICT", "confidence": 1.0, "notes": "Lowercase variant"},
+
+  {"canonical_skill": "Redis", "alias": "redis", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Lowercase variant"},
+
+  {"canonical_skill": "React", "alias": "ReactJS", "alias_type": "SYNONYM", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Common branding"},
+  {"canonical_skill": "React", "alias": "React.js", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "File extension branding"},
+  {"canonical_skill": "React", "alias": "React JS", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Spaced variant"},
+
+  {"canonical_skill": "React Native", "alias": "ReactNative", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "PascalCase variant"},
+  {"canonical_skill": "React Native", "alias": "React-Native", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Hyphenated variant"},
+
+  {"canonical_skill": "Kubernetes", "alias": "K8s", "alias_type": "ACRONYM", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Numeronym"},
+  {"canonical_skill": "Kubernetes", "alias": "k8s", "alias_type": "ACRONYM", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Lowercase numeronym"},
+  {"canonical_skill": "Kubernetes", "alias": "Kube", "alias_type": "SYNONYM", "source": "CURATED_TECH_DICT", "confidence": 0.95, "notes": "Colloquial abbreviation"},
+
+  {"canonical_skill": "Docker", "alias": "Docker containerization", "alias_type": "SYNONYM", "source": "ESCO_ALT_LABEL", "confidence": 0.98, "notes": "Capability reference"},
+  {"canonical_skill": "Docker", "alias": "Docker containers", "alias_type": "SYNONYM", "source": "ESCO_ALT_LABEL", "confidence": 0.98, "notes": "Plural noun usage"},
+
+  {"canonical_skill": "Git", "alias": "git", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Lowercase tool name"},
+  {"canonical_skill": "Git", "alias": "GitHub", "alias_type": "SYNONYM", "source": "CURATED_TECH_DICT", "confidence": 0.95, "notes": "Platform hosting git"},
+  {"canonical_skill": "Git", "alias": "GitLab", "alias_type": "SYNONYM", "source": "CURATED_TECH_DICT", "confidence": 0.95, "notes": "Platform hosting git"},
+
+  {"canonical_skill": "Linux", "alias": "GNU/Linux", "alias_type": "SYNONYM", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Formal OS name"},
+  {"canonical_skill": "Linux", "alias": "Ubuntu", "alias_type": "SYNONYM", "source": "CURATED_TECH_DICT", "confidence": 0.90, "notes": "Primary Linux distro"},
+
+  {"canonical_skill": "Amazon Web Services", "alias": "AWS", "alias_type": "ACRONYM", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Standard acronym"},
+  {"canonical_skill": "Amazon Web Services", "alias": "AWS Cloud", "alias_type": "SYNONYM", "source": "ONET_CROSSWALK", "confidence": 0.98, "notes": "Service qualifier"},
+
+  {"canonical_skill": "Microsoft Azure", "alias": "Azure", "alias_type": "SYNONYM", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Brand name"},
+  {"canonical_skill": "Microsoft Azure", "alias": "MS Azure", "alias_type": "ACRONYM", "source": "CURATED_TECH_DICT", "confidence": 0.98, "notes": "Abbreviated prefix"},
+
+  {"canonical_skill": "Google Cloud Platform", "alias": "GCP", "alias_type": "ACRONYM", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Standard acronym"},
+  {"canonical_skill": "Google Cloud Platform", "alias": "Google Cloud", "alias_type": "SYNONYM", "source": "CURATED_TECH_DICT", "confidence": 1.0, "notes": "Modern branding"},
+
+  {"canonical_skill": "Machine Learning", "alias": "ML", "alias_type": "ACRONYM", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Standard acronym"},
+  {"canonical_skill": "Deep Learning", "alias": "DL", "alias_type": "ACRONYM", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Standard acronym"},
+  {"canonical_skill": "Natural Language Processing", "alias": "NLP", "alias_type": "ACRONYM", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Standard acronym"},
+  {"canonical_skill": "Computer Vision", "alias": "CV", "alias_type": "ACRONYM", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Standard acronym"},
+
+  {"canonical_skill": "Scikit-learn", "alias": "sklearn", "alias_type": "ACRONYM", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Python package import name"},
+  {"canonical_skill": "Scikit-learn", "alias": "scikit learn", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Unhyphenated variant"},
+
+  {"canonical_skill": "TensorFlow", "alias": "TF", "alias_type": "ACRONYM", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Standard acronym"},
+  {"canonical_skill": "TensorFlow", "alias": "Tensorflow", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "CamelCase normalization"},
+
+  {"canonical_skill": "PyTorch", "alias": "pytorch", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Lowercase variant"},
+  {"canonical_skill": "PyTorch", "alias": "Torch", "alias_type": "SYNONYM", "source": "ONET_CROSSWALK", "confidence": 0.95, "notes": "Short name"},
+
+  {"canonical_skill": "Pandas", "alias": "pandas", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Lowercase package name"},
+
+  {"canonical_skill": "NumPy", "alias": "numpy", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Lowercase package name"},
+  {"canonical_skill": "NumPy", "alias": "np", "alias_type": "ACRONYM", "source": "CURATED_TECH_DICT", "confidence": 0.90, "notes": "Import convention"},
+
+  {"canonical_skill": "Spring Boot", "alias": "Springboot", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Single word spelling"},
+  {"canonical_skill": "Spring Boot", "alias": "Spring-Boot", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Hyphenated spelling"},
+  {"canonical_skill": "Spring Boot", "alias": "Spring Framework", "alias_type": "SYNONYM", "source": "ONET_CROSSWALK", "confidence": 0.90, "notes": "Parent framework"},
+
+  {"canonical_skill": "FastAPI", "alias": "Fast API", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Spaced spelling"},
+  {"canonical_skill": "Django", "alias": "django", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Lowercase variant"},
+
+  {"canonical_skill": "CI/CD", "alias": "CICD", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Slashless variant"},
+  {"canonical_skill": "CI/CD", "alias": "Continuous Integration", "alias_type": "SYNONYM", "source": "ONET_CROSSWALK", "confidence": 0.95, "notes": "First half of CI/CD"},
+  {"canonical_skill": "CI/CD", "alias": "Continuous Deployment", "alias_type": "SYNONYM", "source": "ONET_CROSSWALK", "confidence": 0.95, "notes": "Second half of CI/CD"},
+
+  {"canonical_skill": "C++", "alias": "CPP", "alias_type": "ACRONYM", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "File extension / acronym"},
+  {"canonical_skill": "C++", "alias": "C plus plus", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Spelled out plus signs"},
+  {"canonical_skill": "C++", "alias": "C++11", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Standard revision"},
+  {"canonical_skill": "C++", "alias": "C++14", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Standard revision"},
+  {"canonical_skill": "C++", "alias": "C++17", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Standard revision"},
+  {"canonical_skill": "C++", "alias": "C++20", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Standard revision"},
+  {"canonical_skill": "C++", "alias": "C++23", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Standard revision"},
+
+  {"canonical_skill": "Java", "alias": "Core Java", "alias_type": "SYNONYM", "source": "ESCO_ALT_LABEL", "confidence": 0.95, "notes": "Core Java variant"},
+  {"canonical_skill": "Java", "alias": "Java 8", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 0.95, "notes": "Version variant"},
+  {"canonical_skill": "Java", "alias": "Java8", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 0.95, "notes": "Version variant without space"},
+  {"canonical_skill": "Java", "alias": "Java 11", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 0.95, "notes": "Version variant"},
+  {"canonical_skill": "Java", "alias": "Java11", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 0.95, "notes": "Version variant without space"},
+  {"canonical_skill": "Java", "alias": "Java 17", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 0.95, "notes": "Version variant"},
+  {"canonical_skill": "Java", "alias": "Java17", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 0.95, "notes": "Version variant without space"},
+  {"canonical_skill": "Java", "alias": "Java 21", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 0.95, "notes": "Version variant"},
+  {"canonical_skill": "Java", "alias": "Java21", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 0.95, "notes": "Version variant without space"},
+
+  {"canonical_skill": "HTML", "alias": "HTML5", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "HTML version 5"},
+  {"canonical_skill": "HTML", "alias": "HyperText Markup Language", "alias_type": "SYNONYM", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Expanded acronym"},
+
+  {"canonical_skill": "CSS", "alias": "CSS3", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "CSS version 3"},
+  {"canonical_skill": "CSS", "alias": "Cascading Style Sheets", "alias_type": "SYNONYM", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Expanded acronym"},
+
+  {"canonical_skill": "Tailwind CSS", "alias": "Tailwind", "alias_type": "SYNONYM", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Colloquial brand"},
+  {"canonical_skill": "Tailwind CSS", "alias": "TailwindCSS", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "CamelCase brand"},
+
+  {"canonical_skill": "REST API", "alias": "REST", "alias_type": "ACRONYM", "source": "ESCO_ALT_LABEL", "confidence": 0.95, "notes": "Shorthand"},
+  {"canonical_skill": "REST API", "alias": "RESTful API", "alias_type": "SYNONYM", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Standard term"},
+  {"canonical_skill": "REST API", "alias": "REST APIs", "alias_type": "SPELLING_VARIANT", "source": "ESCO_ALT_LABEL", "confidence": 1.0, "notes": "Plural"},
+  {"canonical_skill": "REST API", "alias": "RESTful Web Services", "alias_type": "SYNONYM", "source": "ESCO_ALT_LABEL", "confidence": 0.95, "notes": "Extended description"},
+
+  {"canonical_skill": "GraphQL", "alias": "graphql", "alias_type": "SPELLING_VARIANT", "source": "ONET_CROSSWALK", "confidence": 1.0, "notes": "Lowercase variant"}
+]

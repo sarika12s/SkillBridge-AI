@@ -1,0 +1,146 @@
+[
+  {
+    "name": "React",
+    "category": "FRAMEWORK",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T001",
+    "description": "React is a free and open-source front-end JavaScript library for building user interfaces based on components. Distinct from React Native.",
+    "alternative_labels": ["ReactJS", "React.js", "React JS", "React framework"]
+  },
+  {
+    "name": "React Native",
+    "category": "FRAMEWORK",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T002",
+    "description": "React Native is an open-source UI software framework created by Meta Platforms to develop applications for Android, iOS, and Web. Distinct from web React.",
+    "alternative_labels": ["ReactNative", "React-Native"]
+  },
+  {
+    "name": "FastAPI",
+    "category": "FRAMEWORK",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T003",
+    "description": "FastAPI is a modern, high-performance web framework for building APIs with Python based on standard Python type hints and Pydantic.",
+    "alternative_labels": ["FastAPI framework", "Fast API"]
+  },
+  {
+    "name": "Django",
+    "category": "FRAMEWORK",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T004",
+    "description": "Django is a free and open-source, Python-based web framework that follows the model-template-views architectural pattern.",
+    "alternative_labels": ["Django framework", "Django REST Framework", "DRF"]
+  },
+  {
+    "name": "Spring Boot",
+    "category": "FRAMEWORK",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T005",
+    "description": "Spring Boot makes it easy to create stand-alone, production-grade Spring-based Java enterprise applications.",
+    "alternative_labels": ["Springboot", "Spring-Boot", "Spring framework"]
+  },
+  {
+    "name": "PyTorch",
+    "category": "AI_ML",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T006",
+    "description": "PyTorch is an open-source machine learning framework based on the Torch library used for computer vision and natural language processing. Distinct from TensorFlow.",
+    "alternative_labels": ["Torch", "PyTorch ML"]
+  },
+  {
+    "name": "TensorFlow",
+    "category": "AI_ML",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T007",
+    "description": "TensorFlow is a free and open-source software library for machine learning and artificial intelligence developed by Google. Distinct from PyTorch.",
+    "alternative_labels": ["TF", "Tensorflow library", "Keras"]
+  },
+  {
+    "name": "Scikit-learn",
+    "category": "AI_ML",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T008",
+    "description": "Scikit-learn is a free software machine learning library for the Python programming language featuring classification, regression and clustering algorithms.",
+    "alternative_labels": ["sklearn", "scikit learn"]
+  },
+  {
+    "name": "Pandas",
+    "category": "DATA_ENGINEERING",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T009",
+    "description": "Pandas is a software library written for the Python programming language for data manipulation and analysis, particularly structured data frames.",
+    "alternative_labels": ["Python Pandas", "Pandas library"]
+  },
+  {
+    "name": "NumPy",
+    "category": "DATA_ENGINEERING",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T010",
+    "description": "NumPy is a library for the Python programming language adding support for large, multi-dimensional arrays and matrices along with mathematical functions.",
+    "alternative_labels": ["Numpy library", "Numeric Python"]
+  },
+  {
+    "name": "Amazon Web Services",
+    "category": "CLOUD_DEVOPS",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T011",
+    "description": "Amazon Web Services (AWS) is a comprehensive, evolving cloud computing platform provided by Amazon that includes a mixture of IaaS, PaaS, and SaaS offerings.",
+    "alternative_labels": ["AWS", "Amazon Cloud", "AWS Cloud"]
+  },
+  {
+    "name": "Microsoft Azure",
+    "category": "CLOUD_DEVOPS",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T012",
+    "description": "Microsoft Azure is a cloud computing platform operated by Microsoft for application management via Microsoft-managed data centers. Distinct from AWS.",
+    "alternative_labels": ["Azure", "MS Azure"]
+  },
+  {
+    "name": "Google Cloud Platform",
+    "category": "CLOUD_DEVOPS",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T013",
+    "description": "Google Cloud Platform (GCP) is a suite of cloud computing services that runs on the same infrastructure that Google uses internally.",
+    "alternative_labels": ["GCP", "Google Cloud"]
+  },
+  {
+    "name": "CI/CD",
+    "category": "CLOUD_DEVOPS",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T014",
+    "description": "Continuous Integration and Continuous Delivery/Deployment (CI/CD) is a method to frequently deliver apps to customers by introducing automation into the stages of app development.",
+    "alternative_labels": ["CICD", "Continuous Integration", "Continuous Delivery", "Continuous Deployment", "Jenkins", "GitHub Actions"]
+  },
+  {
+    "name": "HTML",
+    "category": "PROGRAMMING_LANGUAGE",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T015",
+    "description": "HyperText Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser.",
+    "alternative_labels": ["HTML5", "Hypertext Markup Language"]
+  },
+  {
+    "name": "CSS",
+    "category": "PROGRAMMING_LANGUAGE",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T016",
+    "description": "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.",
+    "alternative_labels": ["CSS3", "Cascading Style Sheets"]
+  },
+  {
+    "name": "Tailwind CSS",
+    "category": "FRAMEWORK",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T017",
+    "description": "Tailwind CSS is an open-source utility-first CSS framework for rapidly building custom user interfaces.",
+    "alternative_labels": ["Tailwind", "TailwindCSS"]
+  },
+  {
+    "name": "GraphQL",
+    "category": "METHODOLOGY",
+    "taxonomy_source": "ONET",
+    "taxonomy_code": "15-1252.00-T018",
+    "description": "GraphQL is an open-source data query and manipulation language for APIs, and a runtime for fulfilling queries with existing data.",
+    "alternative_labels": ["GQL"]
+  }
+]
