@@ -1,9 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { learningService } from '../services/learningService';
-import type { LearningPath, ReconciliationResponse } from '../types/learning';
+import type {
+  LearningPath,
+  ReconciliationResponse,
+  PrioritizedSkill,
+} from '../types/learning';
 import { LearningStageCard } from '../components/learning/LearningStageCard';
 import { DependencyGraphVisualizer } from '../components/learning/DependencyGraphVisualizer';
+import { NextBestSkillBanner } from '../components/learning/NextBestSkillBanner';
 import {
   BookOpen,
   GitBranch,
@@ -16,6 +22,7 @@ import {
   CheckCircle2,
   Sparkles,
   X,
+  Layers,
 } from 'lucide-react';
 
 export const LearningPathView: React.FC = () => {
@@ -32,6 +39,32 @@ export const LearningPathView: React.FC = () => {
   const [reconciliationResult, setReconciliationResult] = useState<ReconciliationResponse | null>(null);
   const [updatingItemId, setUpdatingItemId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  const queryClient = useQueryClient();
+
+  const { data: prioritizedRoadmap } = useQuery({
+    queryKey: ['learning-path-prioritized', selectedPathId],
+    queryFn: () => learningService.getPrioritizedRoadmap(selectedPathId),
+    enabled: !!selectedPathId,
+  });
+
+  const prioritizedSkillsMap = useMemo(() => {
+    const map: Record<string, PrioritizedSkill> = {};
+    if (prioritizedRoadmap?.prioritized_skills) {
+      for (const s of prioritizedRoadmap.prioritized_skills) {
+        map[s.skill_id] = s;
+        map[s.skill_name.toLowerCase()] = s;
+      }
+    }
+    return map;
+  }, [prioritizedRoadmap]);
+
+  const implicitPrerequisitesNotInPath = useMemo(() => {
+    if (!prioritizedRoadmap?.prioritized_skills) return [];
+    return prioritizedRoadmap.prioritized_skills.filter(
+      (s) => s.is_implicit_prerequisite && !s.item_id
+    );
+  }, [prioritizedRoadmap]);
 
   useEffect(() => {
     loadUserPaths();
@@ -111,6 +144,9 @@ export const LearningPathView: React.FC = () => {
           graph: updatedGraph,
         });
       }
+      queryClient.invalidateQueries({
+        queryKey: ['learning-path-prioritized', selectedPathId],
+      });
     } catch (err: any) {
       setError(err?.response?.data?.detail || 'Failed to update item progress.');
     } finally {
@@ -125,6 +161,9 @@ export const LearningPathView: React.FC = () => {
     try {
       const res = await learningService.reconcileLearningPath(selectedPathId);
       setReconciliationResult(res);
+      queryClient.invalidateQueries({
+        queryKey: ['learning-path-prioritized', selectedPathId],
+      });
       await loadPathDetails(selectedPathId);
     } catch (err: any) {
       setError(
@@ -327,12 +366,88 @@ export const LearningPathView: React.FC = () => {
           {/* Tab Content */}
           {activeTab === 'curriculum' ? (
             <div>
+              {/* Phase 8.4 Recommended Next Best Skill Banner */}
+              <NextBestSkillBanner
+                nextBestSkill={prioritizedRoadmap?.next_best_skill}
+                overallProgress={path.overall_progress_percentage}
+                totalSkillsCount={
+                  prioritizedRoadmap?.total_skills_count ??
+                  path.stages.reduce((acc, s) => acc + s.items.length, 0)
+                }
+                completedSkillsCount={prioritizedRoadmap?.completed_skills_count ?? 0}
+                onSelectSkill={(_skillId, itemId) => {
+                  if (itemId) {
+                    const el = document.getElementById(itemId);
+                    if (el) {
+                      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                  }
+                }}
+              />
+
+              {/* Foundational Implicit Prerequisites Identified */}
+              {implicitPrerequisitesNotInPath.length > 0 && (
+                <div className="bg-slate-900 border border-amber-500/30 rounded-2xl p-6 shadow-xl mb-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold">
+                      <Layers className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-slate-100 flex items-center gap-2">
+                        Foundational Prerequisites Identified
+                        <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                          {implicitPrerequisitesNotInPath.length} Essential Dependenc{implicitPrerequisitesNotInPath.length > 1 ? 'ies' : 'y'}
+                        </span>
+                      </h3>
+                      <p className="text-xs text-slate-400">
+                        Our dependency graph identified these foundational skills as required prerequisites to successfully learn your target curriculum.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {implicitPrerequisitesNotInPath.map((imp) => (
+                      <div
+                        key={imp.skill_id}
+                        className="p-4 rounded-xl border bg-slate-950/60 border-amber-500/20 flex flex-col justify-between"
+                      >
+                        <div>
+                          <div className="flex items-start justify-between gap-2 mb-2">
+                            <div>
+                              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700 inline-block mb-1">
+                                {imp.category.replace('_', ' ')}
+                              </span>
+                              <h4 className="text-base font-bold text-slate-100">{imp.skill_name}</h4>
+                            </div>
+                            <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                              {imp.readiness_status === 'READY' ? 'Ready to Learn' : 'Blocked'}
+                            </span>
+                          </div>
+                          <p className="text-xs text-slate-300 mb-3">{imp.explanation}</p>
+                        </div>
+
+                        <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                          <span className="flex items-center gap-1">
+                            <Clock className="w-3.5 h-3.5 text-indigo-400" />
+                            {imp.estimated_hours}h estimated
+                          </span>
+                          <span className="font-mono text-indigo-300">
+                            Priority {imp.priority_score.toFixed(1)}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {path.stages.map((stg) => (
                 <LearningStageCard
                   key={stg.stage_number}
                   stage={stg}
                   onUpdateItemStatus={handleUpdateItemStatus}
                   updatingItemId={updatingItemId}
+                  prioritizedSkillsMap={prioritizedSkillsMap}
                 />
               ))}
             </div>

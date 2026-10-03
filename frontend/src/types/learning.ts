@@ -124,3 +124,59 @@ export interface ReconciliationResponse {
   verified_items: VerifiedItemDetail[];
   message: string;
 }
+
+export interface PrioritizedSkill {
+  skill_id: string;
+  skill_name: string;
+  category: string;
+  priority_score: number;
+  role_criticality: number;
+  dependency_leverage: number;
+  gap_impact: number;
+  learning_efficiency: number;
+  readiness_status: 'READY' | 'BLOCKED' | 'COMPLETED';
+  unsatisfied_prerequisites: string[];
+  satisfied_prerequisites: string[];
+  downstream_unlocked_skills: string[];
+  downstream_unlocked_count: number;
+  estimated_hours: number;
+  delta_compatibility: number;
+  is_implicit_prerequisite: boolean;
+  explanation: string;
+  item_id?: string | null;
+  status: 'NOT_STARTED' | 'IN_PROGRESS' | 'COMPLETED';
+  stage_order?: number | null;
+}
+
+export interface NextBestSkill {
+  skill_id: string;
+  skill_name: string;
+  category: string;
+  priority_score: number;
+  estimated_hours: number;
+  delta_compatibility: number;
+  downstream_unlocked_count: number;
+  downstream_unlocked_skills: string[];
+  explanation: string;
+  is_implicit_prerequisite: boolean;
+  item_id?: string | null;
+}
+
+export interface DiagnosticCycle {
+  has_cycle: boolean;
+  cycle_paths: string[][];
+}
+
+export interface PrioritizedRoadmapResponse {
+  learning_path_id: string;
+  target_type: 'CAREER' | 'JOB';
+  target_title?: string | null;
+  overall_progress_percentage: number;
+  total_skills_count: number;
+  ready_skills_count: number;
+  blocked_skills_count: number;
+  completed_skills_count: number;
+  next_best_skill?: NextBestSkill | null;
+  prioritized_skills: PrioritizedSkill[];
+  diagnostics: DiagnosticCycle;
+}

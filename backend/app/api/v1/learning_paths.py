@@ -2,7 +2,7 @@
 
 import uuid
 from typing import List, Dict, Any, Optional
-from fastapi import APIRouter, Depends, status
+from fastapi import APIRouter, Depends, Query, status
 from sqlalchemy.orm import Session
 
 from app.core.database import get_db
@@ -14,7 +14,9 @@ from app.schemas.learning import (
     ReconciliationRequest,
     ReconciliationResponse,
 )
+from app.schemas.prioritized_learning import PrioritizedRoadmapResponse
 from app.services.learning_service import LearningService
+from app.services.prioritization_service import PrioritizationService
 
 router = APIRouter(prefix="/learning-paths", tags=["Learning Paths & Progress Tracking"])
 
@@ -74,6 +76,36 @@ def get_learning_path(
         path_id=path_id,
         user_id=uuid.UUID(current_user_id),
     )
+
+
+@router.get(
+    "/{path_id}/prioritized",
+    response_model=PrioritizedRoadmapResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Retrieve prioritized skill roadmap and Next Best Skill recommendation",
+)
+def get_prioritized_roadmap(
+    path_id: uuid.UUID,
+    include_implicit: bool = Query(
+        True,
+        description="Whether to discover and inject implicit prerequisite skills from explicit taxonomy relationships",
+    ),
+    db: Session = Depends(get_db),
+    current_user_id: str = Depends(get_current_user_id),
+):
+    """
+    Computes deterministic, prerequisite-aware prioritization across target skills
+    and implicit foundational prerequisites for students and freshers.
+    Identifies the single Next Best Skill under a strict readiness hard gatekeeper.
+    Completely compute-on-read: never mutates historical learning paths.
+    """
+    service = PrioritizationService(db)
+    return service.get_prioritized_roadmap(
+        path_id=path_id,
+        user_id=uuid.UUID(current_user_id),
+        include_implicit=include_implicit,
+    )
+
 
 
 @router.patch(

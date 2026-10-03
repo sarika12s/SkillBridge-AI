@@ -1,11 +1,15 @@
 import React from 'react';
-import type { LearningStage, LearningPathItem } from '../../types/learning';
+import type { LearningStage, LearningPathItem, PrioritizedSkill } from '../../types/learning';
 import {
   Clock,
   ExternalLink,
   CheckCircle2,
   CircleDashed,
   PlayCircle,
+  Sparkles,
+  Lock,
+  Unlock,
+  TrendingUp,
 } from 'lucide-react';
 
 interface LearningStageCardProps {
@@ -15,12 +19,14 @@ interface LearningStageCardProps {
     newStatus: 'NOT_STARTED' | 'IN_PROGRESS' | 'COMPLETED'
   ) => void;
   updatingItemId?: string | null;
+  prioritizedSkillsMap?: Record<string, PrioritizedSkill>;
 }
 
 export const LearningStageCard: React.FC<LearningStageCardProps> = ({
   stage,
   onUpdateItemStatus,
   updatingItemId,
+  prioritizedSkillsMap,
 }) => {
   const getStatusBadge = (item: LearningPathItem) => {
     switch (item.status) {
@@ -111,9 +117,58 @@ export const LearningStageCard: React.FC<LearningStageCardProps> = ({
                 {/* Header */}
                 <div className="flex items-start justify-between gap-2 mb-3">
                   <div>
-                    <span className="text-xs font-mono font-medium px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700 inline-block mb-1">
-                      {item.skill_category?.replace('_', ' ') || 'TECHNICAL'}
-                    </span>
+                    <div className="flex flex-wrap items-center gap-1.5 mb-1">
+                      <span className="text-xs font-mono font-medium px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700 inline-block">
+                        {item.skill_category?.replace('_', ' ') || 'TECHNICAL'}
+                      </span>
+                      {(() => {
+                        const prioritized =
+                          prioritizedSkillsMap?.[item.skill_id] ||
+                          prioritizedSkillsMap?.[item.skill_name.toLowerCase()];
+                        if (!prioritized) return null;
+                        return (
+                          <>
+                            {item.status !== 'COMPLETED' && prioritized.readiness_status === 'READY' && (
+                              <span className="flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                                <Sparkles className="w-2.5 h-2.5 text-emerald-400" />
+                                Ready to Learn
+                              </span>
+                            )}
+                            {item.status !== 'COMPLETED' && prioritized.readiness_status === 'BLOCKED' && (
+                              <span
+                                title={
+                                  prioritized.unsatisfied_prerequisites.length > 0
+                                    ? `Blocked by: ${prioritized.unsatisfied_prerequisites.join(', ')}`
+                                    : 'Prerequisites required'
+                                }
+                                className="flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-500/15 text-amber-300 border border-amber-500/30 cursor-help"
+                              >
+                                <Lock className="w-2.5 h-2.5 text-amber-400" />
+                                Blocked ({prioritized.unsatisfied_prerequisites.length})
+                              </span>
+                            )}
+                            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-indigo-950/60 text-indigo-300 border border-indigo-800/40">
+                              Priority {prioritized.priority_score.toFixed(1)}
+                            </span>
+                            {prioritized.delta_compatibility > 0 && (
+                              <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-800/40 flex items-center gap-0.5">
+                                <TrendingUp className="w-2.5 h-2.5" />
+                                +{prioritized.delta_compatibility.toFixed(1)}%
+                              </span>
+                            )}
+                            {prioritized.downstream_unlocked_count > 0 && (
+                              <span
+                                title={`Unlocks: ${prioritized.downstream_unlocked_skills.join(', ')}`}
+                                className="text-[10px] px-1.5 py-0.5 rounded bg-purple-950/60 text-purple-300 border border-purple-800/40 flex items-center gap-0.5 cursor-help"
+                              >
+                                <Unlock className="w-2.5 h-2.5" />
+                                Unlocks {prioritized.downstream_unlocked_count}
+                              </span>
+                            )}
+                          </>
+                        );
+                      })()}
+                    </div>
                     <h4 className="text-base font-bold text-slate-100">{item.skill_name}</h4>
                   </div>
                   <div>{getStatusBadge(item)}</div>

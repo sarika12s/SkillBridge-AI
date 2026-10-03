@@ -4,6 +4,7 @@ import type {
   LearningPathCreateRequest,
   ReconciliationRequest,
   ReconciliationResponse,
+  PrioritizedRoadmapResponse,
 } from '../types/learning';
 
 export const learningService = {
@@ -19,6 +20,17 @@ export const learningService = {
 
   async listLearningPaths(): Promise<any[]> {
     const response = await apiClient.get<any[]>('/learning-paths');
+    return response.data;
+  },
+
+  async getPrioritizedRoadmap(
+    pathId: string,
+    includeImplicit: boolean = true
+  ): Promise<PrioritizedRoadmapResponse> {
+    const response = await apiClient.get<PrioritizedRoadmapResponse>(
+      `/learning-paths/${pathId}/prioritized`,
+      { params: { include_implicit: includeImplicit } }
+    );
     return response.data;
   },
 
