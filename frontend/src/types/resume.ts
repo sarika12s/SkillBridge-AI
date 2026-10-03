@@ -87,3 +87,44 @@ export interface StructuredResume {
   certifications: ResumeCertification[];
   raw_text?: string | null;
 }
+
+export interface STARComponentDetail {
+  detected: boolean;
+  evidence_text: string | null;
+  signals_detected: string[];
+  explanation: string;
+}
+
+export interface BulletSTARAnalysis {
+  bullet_id: string;
+  section_type: string;
+  parent_entry_title: string;
+  raw_text: string;
+  situation: STARComponentDetail;
+  task: STARComponentDetail;
+  action: STARComponentDetail;
+  result: STARComponentDetail;
+  completeness_score: number;
+  missing_components: string[];
+  improvement_guidance: string[];
+}
+
+export interface STARSummaryMetrics {
+  total_bullets_analyzed: number;
+  bullets_with_action: number;
+  bullets_with_result: number;
+  bullets_with_situation: number;
+  bullets_with_task: number;
+  overall_completeness_percentage: number;
+  strong_bullets_count: number;
+  needs_improvement_count: number;
+}
+
+export interface ResumeSTARGuidanceResponse {
+  resume_id: string;
+  resume_version: number;
+  resume_title: string;
+  summary: STARSummaryMetrics;
+  bullets: BulletSTARAnalysis[];
+  methodology: string;
+}

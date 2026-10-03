@@ -1,5 +1,5 @@
 import { apiClient } from './api';
-import type { StructuredResume, ResumeSummary } from '../types/resume';
+import type { StructuredResume, ResumeSummary, ResumeSTARGuidanceResponse } from '../types/resume';
 
 export const uploadResume = async (
   file: File,
@@ -39,4 +39,9 @@ export const getResumeById = async (id: string): Promise<StructuredResume> => {
 
 export const deleteResume = async (id: string): Promise<void> => {
   await apiClient.delete(`/resumes/${id}`);
+};
+
+export const getSTARGuidance = async (resumeId: string): Promise<ResumeSTARGuidanceResponse> => {
+  const response = await apiClient.get<ResumeSTARGuidanceResponse>(`/resumes/${resumeId}/star-guidance`);
+  return response.data;
 };

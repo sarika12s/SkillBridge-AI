@@ -12,12 +12,14 @@ import {
   Calendar,
   ExternalLink,
   Code,
-  Sparkles
+  Sparkles,
+  Target
 } from 'lucide-react';
 import type { StructuredResume } from '../../types/resume';
 import { ParsingStatus } from './ParsingStatus';
 import { ResumeSectionCard } from './ResumeSectionCard';
 import { SkillIntelligenceView } from '../skills/SkillIntelligenceView';
+import { STARGuidanceView } from './STARGuidanceView';
 
 const LinkedinIcon: React.FC<{ className?: string }> = ({ className = 'w-3 h-3' }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -37,7 +39,7 @@ interface ResumePreviewProps {
 }
 
 export const ResumePreview: React.FC<ResumePreviewProps> = ({ resume, onReset }) => {
-  const [activeTab, setActiveTab] = useState<'skills' | 'sections' | 'experience' | 'projects' | 'certifications' | 'raw'>(
+  const [activeTab, setActiveTab] = useState<'skills' | 'star' | 'sections' | 'experience' | 'projects' | 'certifications' | 'raw'>(
     'skills'
   );
 
@@ -204,6 +206,18 @@ export const ResumePreview: React.FC<ResumePreviewProps> = ({ resume, onReset })
         </button>
 
         <button
+          onClick={() => setActiveTab('star')}
+          className={`px-4 py-2.5 rounded-lg transition flex items-center space-x-2 ${
+            activeTab === 'star'
+              ? 'bg-blue-600 text-white shadow-sm'
+              : 'text-slate-600 hover:bg-slate-100'
+          }`}
+        >
+          <Target className="w-4 h-4 text-emerald-400" />
+          <span>STAR Quality Guidance</span>
+        </button>
+
+        <button
           onClick={() => setActiveTab('sections')}
           className={`px-4 py-2.5 rounded-lg transition flex items-center space-x-2 ${
             activeTab === 'sections'
@@ -269,6 +283,11 @@ export const ResumePreview: React.FC<ResumePreviewProps> = ({ resume, onReset })
         {/* Extracted Skills Tab */}
         {activeTab === 'skills' && (
           <SkillIntelligenceView resumeId={resume.id} />
+        )}
+
+        {/* STAR Quality Guidance Tab */}
+        {activeTab === 'star' && (
+          <STARGuidanceView resumeId={resume.id} />
         )}
 
         {/* Sections Tab */}

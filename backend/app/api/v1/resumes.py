@@ -16,6 +16,7 @@ from app.schemas.dashboard import (
     ResumeVersionComparisonResponse,
 )
 from app.schemas.skill import ResumeSkillsResponse
+from app.schemas.star_guidance import ResumeSTARGuidanceResponse
 from app.services.resume_service import (
     process_resume_upload,
     get_user_resumes,
@@ -24,6 +25,7 @@ from app.services.resume_service import (
 )
 from app.services.skill_service import SkillService
 from app.services.version_service import VersionService
+from app.services.star_guidance_service import star_guidance_service
 
 router = APIRouter(prefix="/resumes", tags=["Resumes"])
 skill_service = SkillService()
@@ -144,4 +146,26 @@ def get_resume_skills(
 ):
     """Retrieve all normalized skills extracted from resume sections with taxonomy and evidence."""
     return skill_service.get_resume_skills(resume_id=id, db=db)
+
+
+@router.get(
+    "/{resume_id}/star-guidance",
+    response_model=ResumeSTARGuidanceResponse,
+    summary="Get STAR quality guidance for a resume",
+)
+def get_resume_star_guidance(
+    resume_id: uuid.UUID,
+    user_id: str = Depends(get_current_user_id),
+    db: Session = Depends(get_db),
+):
+    """
+    Computes deterministic rule-based STAR structural analysis across all experience
+    and project achievement bullets for the exact specified resume version.
+    """
+    user_uuid = uuid.UUID(user_id)
+    return star_guidance_service.get_resume_star_guidance(
+        db=db,
+        resume_id=resume_id,
+        user_id=user_uuid,
+    )
 
